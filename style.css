@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(212, 212, 212);
+    width: 100%;
+    height: 100vh;
+    word-spacing: normal;
+    line-height: 30px;
+    font-size: 17px;
+}
+
+/* GRID CONTAINER */
+.flex-container {
+    display: grid;
+    grid-template-columns: 28% 72%;   /* Sidebar ~28%, Main ~72% */
+    grid-gap: 20px;                   /* space between columns */
+    margin: 120px;
+    grid-template-areas: "sidebar content";
+}
+
+/* Sidebar */
+aside {
+    background-color: rgb(172, 173, 173);
+    padding: 5rem 3rem;
+    grid-area: sidebar;
+}
+
+/* Main Content */
+main {
+    background-color: rgb(250, 205, 255);
+    padding: 5rem 3rem;
+    grid-area: content;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+hr {
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                 'Lucida Grande', 'Lucida Sans Unicode',
+                 Geneva, Verdana, sans-serif;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.Last-Name {
+    color: rgb(1, 13, 63);
+}
+
+img {
+    width: 200px;
+    border: 4px solid blue;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.image {
+    text-align: center;
+}
+
+.pdf {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.download-button {
+    text-decoration: none;
+    background-color: rgb(190, 62, 12);
+    padding: 8px 25px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+.download-button:hover {
+    font-size: 25px;
+    box-shadow: 0px 1px 20px rgba(2, 2, 92, 0.5);
+}
+
+/* ✅ Responsive: single-column for screens ≤768px */
+@media (max-width: 768px) {
+    .flex-container {
+        grid-template-columns: 1fr;   /* one column */
+        grid-template-areas:
+            "sidebar"
+            "content";
+        margin: 20px;                 /* reduce margins */
+    }
+
+    aside, main {
+        padding: 2rem 1.5rem;         /* smaller padding */
+    }
+
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 18px; }
+
+    body {
+        font-size: 15px;
+        line-height: 24px;
+    }
+}
